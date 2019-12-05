@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Links List</h1>
+  {% if link_list %}
+  <ul>
+    {% for link in link_list %}
+      <li>
+        <a href= {{ link.get_absolute_url }}>{{link.name}}</a> ({{link.display_role}})
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no links in the library.</p>
+  {% endif %}         
+{% endblock %}
